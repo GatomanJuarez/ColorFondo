@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document Object Model</title>
+    <style>
+        body{
+            transition: all 2s;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", cargar, true);
+        
+        function cargar(){
+            //alert("El elemento del documento está listo!");
+            //Cambiar el fondini de la paginini
+            var cajaColor = document.getElementById("color");
+            cajaColor.addEventListener("change", cambiar, false);
+            console.log(cajaColor);
+        }
+        
+        function cambiar(){
+            var color = this.value;
+            document.body.style.backgroundColor = color;
+            console.log("El color a cambiado a " + color);
+                if (color == '#000000'){
+                alert("No joven no se pude");
+                    document.body.style.backgroundColor = '#ffffff';
+                    document.body.style.color = 'red';
+            }
+        }
+    </script>
+    </head>
+<body>
+    <span>Selecciona el color de tu página:</span>
+    <input type="color" id="color" />
+    <hr />
+    <a name="principio">Este es el principio de la página</a>
+    <hr />
+    <form>
+    <p>Introduzca su nombre</p>
+        <input type="text" name="nombre" />
+        <input type="reset" value="limpiar" />
+        <input type="submit" value="aceptar" />
+    </form>
+    <form>
+        <input></input>
+    </form>
+    <hr />
+    <p>Da click en la liga para ir al...</p>
+    <a href="#principio">Principio</a>
+    </body>
